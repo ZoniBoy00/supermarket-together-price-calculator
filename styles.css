@@ -1,21 +1,23 @@
+/* Import Fredoka font from Google Fonts with regular and semi-bold weights */
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap');
 
+/* Base page styling */
 body {
-    font-family: 'Fredoka', sans-serif;
-    display: flex;
+    font-family: 'Fredoka', sans-serif; /* Set default font */
+    display: flex; /* Center content vertically and horizontally */
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100vh; /* Full viewport height */
     margin: 0;
     text-align: center;
     position: relative;
-    overflow: hidden;
-    background-color: #1c1c1c;
-    animation: fadeIn 1s ease-in-out;
-    color: white;
+    overflow: hidden; /* Prevent scrollbars */
+    background-color: #1c1c1c; /* Fallback background color */
+    animation: fadeIn 1s ease-in-out; /* Page fade-in animation */
+    color: white; /* Default text color */
 }
 
-/* Dark overlay background */
+/* Background image layer with darkening filter */
 body::before {
     content: "";
     position: absolute;
@@ -25,11 +27,11 @@ body::before {
     height: 100%;
     background: url('background.png') no-repeat center center fixed;
     background-size: cover;
-    filter: brightness(0.5) saturate(1.2);
-    z-index: -2;
+    filter: brightness(0.5) saturate(1.2); /* Darken and enhance saturation */
+    z-index: -2; /* Place behind content but above fallback background */
 }
 
-/* Light gradient overlay */
+/* Dark gradient overlay layer */
 body::after {
     content: "";
     position: absolute;
@@ -38,34 +40,34 @@ body::after {
     width: 100%;
     height: 100%;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9));
-    z-index: -1;
+    z-index: -1; /* Place between background image and content */
 }
 
-/* Main container */
+/* Main content container with glassmorphism effect */
 .container {
-    background: rgba(0, 0, 0, 0.6); /* Dark transparent box */
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
     padding: 20px;
     border-radius: 16px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-    border: 2px solid rgba(255, 204, 0, 0.6);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); /* Depth shadow */
+    border: 2px solid rgba(255, 204, 0, 0.6); /* Gold border */
     width: 90%;
-    max-width: 420px;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    max-width: 420px; /* Responsive max-width */
+    backdrop-filter: blur(10px); /* Glass blur effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari fallback */
 }
 
-/* Main title with supermarket theme */
+/* Main heading styling */
 h1 {
-    color: #ffcc00;
+    color: #ffcc00; /* Gold color */
     font-size: 28px;
     margin-bottom: 8px;
-    font-weight: 600;
-    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.8);
-    opacity: 0;
-    animation: fadeIn 0.8s ease-in-out forwards 0.3s;
+    font-weight: 600; /* Semi-bold weight */
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.8); /* Text depth */
+    opacity: 0; /* Initial state for animation */
+    animation: fadeIn 0.8s ease-in-out forwards 0.3s; /* Staggered fade-in */
 }
 
-/* Subtitle */
+/* Subtitle text styling */
 .subtitle {
     color: #ffffff;
     font-size: 16px;
@@ -73,61 +75,100 @@ h1 {
     font-weight: 500;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
     opacity: 0;
-    animation: fadeIn 1s ease-in-out forwards 0.5s;
+    animation: fadeIn 1s ease-in-out forwards 0.5s; /* Delayed animation */
 }
 
-/* Input field */
+/* Input field styling */
 input {
     width: 80%;
     padding: 12px;
     font-size: 18px;
     margin-bottom: 15px;
-    border: 2px solid rgba(255, 204, 0, 0.8);
+    border: 2px solid rgba(255, 204, 0, 0.8); /* Gold border */
     border-radius: 8px;
     outline: none;
-    transition: border 0.3s, box-shadow 0.3s, transform 0.2s;
+    transition: border 0.3s, box-shadow 0.3s, transform 0.2s; /* Smooth interactions */
     opacity: 0;
-    animation: fadeIn 1.2s ease-in-out forwards 0.7s;
-    background: rgba(255, 204, 0, 0.15);
+    animation: fadeIn 1.2s ease-in-out forwards 0.7s; /* Latest animation */
+    background: rgba(255, 204, 0, 0.15); /* Subtle yellow background */
     color: white;
     text-align: center;
 }
 
-/* Input hover & focus */
+/* Input focus effects */
 input:focus {
     border-color: #ffcc00;
-    box-shadow: 0 0 8px rgba(255, 204, 0, 0.6);
-    transform: scale(1.05);
+    box-shadow: 0 0 8px rgba(255, 204, 0, 0.6); /* Glow effect */
+    transform: scale(1.05); /* Slight zoom */
 }
 
-/* Result text */
+/* Result paragraph styling */
 p {
     font-size: 20px;
     margin-top: 10px;
     opacity: 0;
-    animation: fadeIn 1.5s ease-in-out forwards 0.9s;
+    animation: fadeIn 1.5s ease-in-out forwards 0.9s; /* Final animation */
     color: white;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
 }
 
+/* Highlighted result text */
 .result {
     font-weight: bold;
     text-decoration: underline;
-    color: #ffcc00;
+    color: #ffcc00; /* Gold color for emphasis */
     font-size: 22px;
 }
 
+/* Formula explanation text */
 .formula {
-    color: #ddd;
+    color: #ddd; /* Light gray for secondary text */
     font-size: 14px;
 }
 
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+/* GitHub corner link styling */
+.github-link {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    padding: 10px;
+    border-radius: 50%; /* Circular shape */
+    transition: all 0.3s ease; /* Smooth hover effects */
+    backdrop-filter: blur(5px); /* Frosted glass effect */
+    border: 1px solid rgba(255, 204, 0, 0.3); /* Subtle gold border */
+    z-index: 1000; /* Ensure it's always on top */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+/* GitHub link hover effects */
+.github-link:hover {
+    background: rgba(255, 204, 0, 0.2); /* Gold tint on hover */
+    transform: scale(1.1); /* Slight enlargement */
+    box-shadow: 0 0 15px rgba(255, 204, 0, 0.3); /* Glow effect */
+}
+
+/* GitHub icon styling */
+.github-icon {
+    width: 32px;
+    height: 32px;
+    opacity: 0.9; /* Slightly transparent */
+}
+
+/* Icon hover effect */
+.github-link:hover .github-icon {
+    opacity: 1; /* Full opacity on hover */
+}
+
+/* Fade-in animation definition */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); } /* Start position */
+    to { opacity: 1; transform: translateY(0); } /* End position */
+}
+
+/* Pop-in animation (currently unused but available) */
 @keyframes popIn {
     from { transform: scale(0.8); opacity: 0; }
     to { transform: scale(1); opacity: 1; }
